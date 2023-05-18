@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SimpleDrawProject
+namespace EduDrawProject
 {
     class SimulationData
     {
@@ -190,7 +190,7 @@ namespace SimpleDrawProject
             return final;
         }
     }
-    public class SimpleDraw
+    public class EduDraw
     {
         // PictureBox element to be drawn on
         public PictureBox canvas = null;
@@ -495,6 +495,12 @@ namespace SimpleDrawProject
             GC.Collect();
         }
 
+        public void background(int r, int g, int b, int a)
+        {
+            Color desiredColor = Color.FromArgb(a, r, g, b);
+            background(desiredColor);
+        }
+
         public void fill(Color c)
         {
             // Changes the fill state to true and sets the fill color
@@ -505,6 +511,12 @@ namespace SimpleDrawProject
             currentData.fillState = true;
             currentData.currentFillColor = c;
             currentData.fillBrush = new SolidBrush(c);
+        }
+
+        public void fill(int r, int g, int b, int a)
+        {
+            Color desiredColor = Color.FromArgb(a, r, g, b);
+            fill(desiredColor);
         }
 
         public void changeFont(string name, float size)
@@ -573,6 +585,12 @@ namespace SimpleDrawProject
             currentData.currentStrokeColor = c;
             currentData.strokePen = new Pen(new SolidBrush(c), currentData.currentStrokeWeight);
             
+        }
+
+        public void stroke(int r, int g, int b, int a)
+        {
+            Color desiredColor = Color.FromArgb(a, r, g, b);
+            stroke(desiredColor);
         }
 
         public void noStroke()

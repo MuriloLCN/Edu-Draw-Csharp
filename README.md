@@ -1,6 +1,6 @@
-# Simple-Draw-Csharp
+# Edu-Draw-Csharp
 
-This is the C# version of Simple Draw, for the Python version, please see [Simple Draw Python](https://github.com/MuriloLCN/Simple-Draw-Python)
+This is the C# version of Edu Draw, for the Python version, please see [Edu Draw Python](https://github.com/MuriloLCN/Simple-Draw-Python)
 
 This project is aimed to provide an interface that allows for a simplified experience when using basic 2D graphics in the C# language. 
 
@@ -10,21 +10,21 @@ The details of installation and documentation of the respective versions are bel
 
 ## Installation
  
-  In order to use this interface, you can either download the ```simpledrawproject.cs``` file and include it in your code, import the executable in Visual Studio or, alternatively, you can copy the ```SimpleDraw``` class anywhere into your app's namespace to use it.
+  In order to use this interface, you can either download the ```edudrawproject.cs``` file and include it in your code, import the executable in Visual Studio or, alternatively, you can copy the ```EduDraw``` class anywhere into your app's namespace to use it.
   
 ## Setting up
  
-  In order to begin using the SimpleDraw class to make your drawings, you need to do a few steps first:
+  In order to begin using the EduDraw class to make your drawings, you need to do a few steps first:
   
   #### 0. Make sure you've got System.Windows.Forms and System.Drawing in your project
   
   These are the prerequisites for running this, and should be the first thing you check for before moving forward.
   
-  #### 1. Create an instance of the SimpleDraw class
+  #### 1. Create an instance of the EduDraw class
   
-  This can be done by simply creating a new SimpleDraw variable like this:
+  This can be done by simply creating a new EduDraw variable like this:
     
-    SimpleDraw s = new SimpleDraw();
+    EduDraw s = new EduDraw();
     
   #### 2. Create a PictureBox element in your form (or use null instance - more details later)
   
@@ -40,7 +40,7 @@ These functions are the core of your drawing. ```setup()``` runs once and before
 
   #### 4. Call ```s.start(setup, draw, pictureBox)``` (or the override if in null instace - more details later)
  
-Once you run this method on the instance you made for the SimpleDraw class, the simulation will start and keep running until you give it a halt command.
+Once you run this method on the instance you made for the EduDraw class, the simulation will start and keep running until you give it a halt command.
 You need to pass the ```setup()``` and ```draw()``` functions you made, and also the ```pictureBox``` element to which the drawing will occur.
 
 The general structure of your form code may look something like this:
@@ -50,7 +50,7 @@ namespace YourNameSpace
 {
     public partial class FormName : Form
     {
-        SimpleDraw s = new SimpleDraw();
+        EduDraw s = new EduDraw();
         
         public FormName()
         {
@@ -166,7 +166,7 @@ And just like that, we've got a ball that bounces around like a DVD screensaver 
 This example was just to give you an idea of how you can work with this interface, and there is so much you can do with this, it's all up to you.
 
 # Documentation
-Here are the components that make up the SimpleDraw class and how you can use them.
+Here are the components that make up the EduDraw class and how you can use them.
 
 ---
 ## State methods
@@ -174,7 +174,7 @@ Here are the components that make up the SimpleDraw class and how you can use th
 These methods don't directly draw onto the screen, but rather control aspects of the simulation.
 
 ---
-### SimpleDraw.changeFont(string name, float size)
+### EduDraw.changeFont(string name, float size)
 Changes the font used in the canvas. If temp state is on, it will change the temporary font only.
 
 Parameters:
@@ -197,7 +197,7 @@ void draw()
 ![changefont](https://user-images.githubusercontent.com/88753590/200180481-7ba46dbd-f2b5-4b8a-a343-c3689c48dd91.PNG)
 
 ---
-### SimpleDraw.translate(int x, int y)
+### EduDraw.translate(int x, int y)
 Translates the origin point of the canvas.
 
 Parameters:
@@ -221,7 +221,7 @@ void draw()
 ![newTranslate](https://user-images.githubusercontent.com/88753590/212554937-3faf45e2-46ca-4daa-9706-21e214ac11c5.PNG)
 
 ---
-### SimpleDraw.rotate(float angle)
+### EduDraw.rotate(float angle)
 Rotates the coordinate system to a given angle (in degrees) in the clockwise direction.
 
 Parameters:
@@ -266,7 +266,7 @@ void draw()
 
 
 ---
-### SimpleDraw.scale(float scaleX, float scaleY)
+### EduDraw.scale(float scaleX, float scaleY)
 Sets the scaling of the X and Y axis of the canvas independently based on the values for scaleX and scaleY.
 
 Parameters:
@@ -309,31 +309,31 @@ void draw()
 ![scaling](https://user-images.githubusercontent.com/88753590/212556488-2e2b5100-01ff-4739-a54f-aad8dcbe2b6a.PNG)
 
 ---
-### SimpleDraw.resetTransformations()
+### EduDraw.resetTransformations()
 Resets all applied transformations to the system.
 
 ---
 
-### SimpleDraw.resetRotation()
+### EduDraw.resetRotation()
 Removes all applied rotations to the system.
 
 ---
 
-### SimpleDraw.resetTranslation()
+### EduDraw.resetTranslation()
 Removes all applied translations to the system.
 
 ---
 
-### SimpleDraw.resetScaling()
+### EduDraw.resetScaling()
 Removes all applied scalings to the system.
 
 ---
-### SimpleDraw.noFill()
+### EduDraw.noFill()
 Makes all shapes drawn after this call to not be filled in.
 
 ---
 
-### SimpleDraw.fill(Color c)
+### EduDraw.fill(Color c)
 Makes all shapes drawn after this call to be filled in with a given color.
 
 Parameters:
@@ -358,7 +358,7 @@ void draw()
 ![fill](https://user-images.githubusercontent.com/88753590/200180924-67dc4dec-41f6-4372-b8b3-6bc450c4db81.PNG)
 
 ---
-### SimpleDraw.strokeWeight(int s)
+### EduDraw.strokeWeight(int s)
 Changes how thick or thin the stroke lines are, smaller numbers means thinner outlines, bigger numbers mean thicker outlines.
 
 Parameters:
@@ -387,12 +387,12 @@ void draw()
 
 
 ---
-### SimpleDraw.noStroke()
+### EduDraw.noStroke()
 Makes all shapes drawn after this call to not have their outlines drawn.
 
 ---
 
-### SimpleDraw.stroke(Color c)
+### EduDraw.stroke(Color c)
 Makes all shapes drawn after this call to have their outlines drawn with a given color.
 
 Parameters:
@@ -421,7 +421,7 @@ void draw()
 ![strokenostroke](https://user-images.githubusercontent.com/88753590/200181365-bbd8184a-2839-4d8c-bb91-e6932493a39c.PNG)
 
 ---
-### SimpleDraw.frameRate(int frames)
+### EduDraw.frameRate(int frames)
 Changes the framerate of the simulation. Must be called in ```setup()```.
 Note that this has a limit as the deltaTime between frames must be at least 1ms.
 
@@ -430,16 +430,16 @@ Parameters:
 int frames: The number of FPS to set the simulation to.
 
 ---
-### SimpleDraw.toggleAntiAlias()
+### EduDraw.toggleAntiAlias()
 Toggles anti-aliasing on and off. It is off by default.
 
 ---
-### SimpleDraw.push()
+### EduDraw.push()
 Toggles the temporary state on. All color changes and transformations made when temporary state is on can be undone by leaving this state.
 
 ---
 
-### SimpleDraw.pop()
+### EduDraw.pop()
 Toggles the temporary state off.
 
 ---
@@ -470,8 +470,8 @@ void draw()
 
 
 ---
-### SimpleDraw.start(Action setup, Action draw, PictureBox img)
-### SimpleDraw.start(Action setup, Action draw, int w, int h)
+### EduDraw.start(Action setup, Action draw, PictureBox img)
+### EduDraw.start(Action setup, Action draw, int w, int h)
 Starts the simulation.
 
 Parameters:
@@ -488,17 +488,17 @@ Override B (null mode):
 
 int w, int h: The width and height of the simulation to run
 
-### SimpleDraw.pause()
+### EduDraw.pause()
 Pauses the simulation.
 
-### SimpleDraw.unpause()
+### EduDraw.unpause()
 Unpauses the simulation. Needs to be called somewhere other than ```draw()```, as it will be halted.
 
-### SimpleDraw.quit()
+### EduDraw.quit()
 Quits the simulation.
 
 ---
-### SimpleDraw.zoom(Int zoomFactorCurrent)
+### EduDraw.zoom(Int zoomFactorCurrent)
 Zooms in or out depending on the factor. Equivalent to scaling with the same value on both X and Y axis.
 
 Examples:
@@ -511,7 +511,7 @@ Makes the image zoomed out by a factor of 2x
 
 ---
 
-### SimpleDraw.setAccountForTransformations(bool account)
+### EduDraw.setAccountForTransformations(bool account)
 
 Changes whether the `mousePos()` function should revert or not the transformations done.
 
@@ -521,7 +521,7 @@ bool account: If set to false (default), the position returned in mousePos() is 
 
 ---
 
-### SimpleDraw.setUseAbsolutePosition(bool setUse)
+### EduDraw.setUseAbsolutePosition(bool setUse)
 
 Changes whether the `mousePos()` function should yield the absolute position of the mouse on the screen or the position of the mouse
 relative to the top-left corner of the canvas.
@@ -532,7 +532,7 @@ bool setUse: If set to false (default), the position returned in `mousePos()` is
 
 ---
 
-### SimpleDraw.mousePos(Form f) -> Point()
+### EduDraw.mousePos(Form f) -> Point()
 Gets the current mouse position (relative to the top left corner of the canvas).
 Returns a Point with the X,Y position of the cursor.
 
@@ -613,7 +613,7 @@ void draw()
 
 
 ---
-### SimpleDraw.rectMode(string mode)
+### EduDraw.rectMode(string mode)
 Changes the current mode for drawing squares, rectangles and images.
 
 If `mode` is `"CENTER"`, the mode used will be relative to the center of the rectangle. Any other string passed in will make the mode used to
@@ -644,7 +644,7 @@ void draw()
 ![rectmode](https://user-images.githubusercontent.com/88753590/200935303-f2766482-e3ed-4aa6-a3bd-9a073e4f88f4.PNG)
 
 ---
-### SimpleDraw.circleMode(string mode)
+### EduDraw.circleMode(string mode)
 Changes the current mode for drawing circles and ellipses.
 
 If `mode` is `"TOP_LEFT"`, the mode will be relative tp the top-left corner of the rectangle that contains the circle/ellipse. Any other string
@@ -686,7 +686,7 @@ void draw()
 
 ---
 
-### SimpleDraw.save(string filename)
+### EduDraw.save(string filename)
 Saves the current frame as an image file (on the directory where Image.Save() is set to).
 If filename is empty, the name will be the frame count of when the photo was saved.
 
@@ -696,7 +696,7 @@ If filename is empty, the name will be the frame count of when the photo was sav
 These methods draw onto the canvas.
 
 ---
-### SimpleDraw.point(int x, int y)
+### EduDraw.point(int x, int y)
 Draws a point at coordinates (x,y)
 
 Parameters:
@@ -718,7 +718,7 @@ void draw()
 ![point](https://user-images.githubusercontent.com/88753590/200181835-f8a0649e-16cd-4253-b9a4-2099c79be317.PNG)
 
 ---
-### SimpleDraw.text(string s, int x, int y)
+### EduDraw.text(string s, int x, int y)
 Writes a string of text onto the screen.
 
 Parameters:
@@ -728,7 +728,7 @@ String s: The text to be written
 Int x,y: The coordinates of the top-left corner of the text if RECT_MODE is TOP_LEFT or the middle of the text is RECT_MODE is CENTER.
 
 ---
-### SimpleDraw.clear()
+### EduDraw.clear()
 Clears the entire canvas and just leaves it's background.
 
 Example:
@@ -749,7 +749,7 @@ void draw()
 ![clear](https://user-images.githubusercontent.com/88753590/200182146-059dac63-46cb-41a7-9df7-28cbf1804060.PNG)
 
 ---
-### SimpleDraw.background(Color? c)
+### EduDraw.background(Color? c)
 Sets a new background color and clears the canvas to it. If color is null the background will be transparent.
 
 Parameters:
@@ -773,7 +773,7 @@ void draw()
 
 
 ---
-### SimpleDraw.circle(int x, int y, int r)
+### EduDraw.circle(int x, int y, int r)
 Draws a circle onto the screen.
 
 Parameters:
@@ -804,7 +804,7 @@ void draw()
 ![circle](https://user-images.githubusercontent.com/88753590/200190224-902b2b8b-241f-44f8-b891-ff1562c755a5.PNG)
 
 ---
-### SimpleDraw.ellipse(int x, int y, int w, int h)
+### EduDraw.ellipse(int x, int y, int w, int h)
 Draws an ellipse onto the screen.
 
 Parameters:
@@ -833,7 +833,7 @@ void draw()
 ![ellipse](https://user-images.githubusercontent.com/88753590/200190559-d751d4d4-f6c7-41b2-8119-d994e044e988.PNG)
 
 ---
-### SimpleDraw.line(int x1, int y1, int x2, int y2)
+### EduDraw.line(int x1, int y1, int x2, int y2)
 Draws a line between two points.
 
 Parameters:
@@ -858,7 +858,7 @@ void draw()
 ![lines](https://user-images.githubusercontent.com/88753590/200190969-754cf660-f443-4afd-a040-a0d3a9b64336.PNG)
 
 ---
-### SimpleDraw.rect(int x, int y, int w, int h)
+### EduDraw.rect(int x, int y, int w, int h)
 Draws a rectangle onto the screen.
 
 Parameters:
@@ -894,7 +894,7 @@ void draw()
 
 
 ---
-### SimpleDraw.square(int x, int y, int s)
+### EduDraw.square(int x, int y, int s)
 Draws a square onto the screen.
 
 Parameters:
@@ -925,7 +925,7 @@ void draw()
 ![square](https://user-images.githubusercontent.com/88753590/200191124-c2af008c-e575-429f-8aba-be3b253b3bf7.PNG)
 
 ---
-### SimpleDraw.triangle(int x1, int y1, int x2, int y2, int x3, int y3)
+### EduDraw.triangle(int x1, int y1, int x2, int y2, int x3, int y3)
 Draws a triangle onto the screen.
 
 Parameters:
@@ -952,7 +952,7 @@ void draw()
 ![triangle](https://user-images.githubusercontent.com/88753590/200191477-0bd81153-71ec-4bad-9982-3a37595925ad.PNG)
 
 ---
-### SimpleDraw.polygon(Point[] points)
+### EduDraw.polygon(Point[] points)
 Draws any convex polygon onto the screen.
 
 Parameters:
@@ -974,8 +974,8 @@ void draw()
 
 ---
 
-### SimpleDraw.image(Image img, int x, int y)
-### SimpleDraw.image(Image img, int x, int y, int w, int h)
+### EduDraw.image(Image img, int x, int y)
+### EduDraw.image(Image img, int x, int y, int w, int h)
 
 Draws an image onto the screen at the given position with a determined size. If no size is passed in, the image will have it's original size.
 Notice that using very high resolution images (expectedly) makes the program use more memory.
@@ -1002,9 +1002,9 @@ void draw()
 
 ## Using null mode
 
-Null mode is a mode in which you can run an instance of a simulation without specifying a PictureBox element for it to run on. You can do this for many reasons, including using SimpleDraw in a different context or application, creating multiple drawings inside of one another, among other things.
+Null mode is a mode in which you can run an instance of a simulation without specifying a PictureBox element for it to run on. You can do this for many reasons, including using EduDraw in a different context or application, creating multiple drawings inside of one another, among other things.
 
-To initialize a SimpleDraw instance in null mode, you can either use the `start()` override or use the normal call with `null` as the PictureBox element.
+To initialize a EduDraw instance in null mode, you can either use the `start()` override or use the normal call with `null` as the PictureBox element.
 In order to use the `start()` override, you need to specify the width and the height of the image you want, after the setup and draw methods.
 If you opt to use `null` for the PictureBox instead, you'll have to specify the width and the height in the setup method, otherwise this will cause errors.
 
@@ -1013,8 +1013,8 @@ Examples of null mode starting:
 ```
 void myMainFunction()
 {
-  SimpleDraw s = new SimpleDraw();
-  SimpleDraw t = new SimpleDraw();
+  EduDraw s = new EduDraw();
+  EduDraw t = new EduDraw();
   
   // In this case, we need to specify our width and height in setup
   s.start(setup, draw, null);
@@ -1038,18 +1038,18 @@ void draw2() { ... }
 
 ```
 
-In order to be able to visualize instances in null mode, you'll have to update your desired image output (whether that be an icon, a file, etc) directly in your draw method, and to do that, you'll have to retrieve the images by acessing `SimpleDraw.currentFrame`. With that Bitmap object retrieved, you can use it wherever it's necessary, and you have much more flexibility for what to do with it.
+In order to be able to visualize instances in null mode, you'll have to update your desired image output (whether that be an icon, a file, etc) directly in your draw method, and to do that, you'll have to retrieve the images by acessing `EduDraw.currentFrame`. With that Bitmap object retrieved, you can use it wherever it's necessary, and you have much more flexibility for what to do with it.
 
-A good example of this is to run two instances of SimpleDraw, one normal and one null, and use the retrieved images from the null instance as an argument for `SimpleDraw.image()`, essentially creating a drawing inside of a drawing, like the example below:
+A good example of this is to run two instances of EduDraw, one normal and one null, and use the retrieved images from the null instance as an argument for `EduDraw.image()`, essentially creating a drawing inside of a drawing, like the example below:
 
 ```    
 public partial class Form1 : Form
 {
     // Main drawing
-    SimpleDraw s = new SimpleDraw();
+    EduDraw s = new EduDraw();
 
     // Inner drawing
-    SimpleDraw inner = new SimpleDraw();
+    EduDraw inner = new EduDraw();
 
     public Form1()
     {
